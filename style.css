@@ -1,0 +1,99 @@
+body {
+    background-color: #0b0f19;
+    color: #ffffff;
+    font-family: 'Segoe UI' , Tahoma, Geneva, Verdana, sans-seriff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: radial-gradient(circle at top right, #1a233a, #0b0f19);
+}
+.perfil-contenedor{
+    display: flex;
+    background: rgba (255, 255, 255, 0.05);
+    backdrop-filtrer: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.avatar-seccion{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 40px;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    background-color: #1a233a;
+    border: 3px solid #d4af27;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+.info-seleccion{
+    flex: 2; 
+    padding-letf: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1{
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+.rango{
+    color: #d4af37;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+p{
+    color: #a0aabf;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+.estadisticas{
+    display: flex;
+    gap: 15px;
+}
+/* Tus "rastros" o  habilidades */
+.etiqueta-habilidad{
+    background-color: rgba(212, 175, 55, 0.1);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weigth: bold;
+}
+/* Diseño para dispositivos mobiles */
+@media (max-width: 768px){
+    .perfil-contenedor{
+        flex-direction: column;
+        text-align: center;
+    }
+    .avatar-seccion{
+        border-rigth: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-right: 0;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    .info-seccion{
+        padding-left: 0;
+    }
+    .estadisticas{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
