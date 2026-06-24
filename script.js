@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () =>{
     //1. Buscamos el parrafo en la bibliografia
-    const parrafo = document.querySelector('.info.seccion p');
+    const textoBiografia = document.querySelector('.info-seccion p');
 
     //2. Guardamos el texto original y limpiamos el parrafo para empezar desde de cero
     const textoOriginal = textoBiografia.textContent;
