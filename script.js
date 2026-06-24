@@ -1,28 +1,83 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Buscamos el parrafo en la bibliografia (Asegurate que en el HTML tienes .info-seccion p)
-    const textoBiografia = document.querySelector('.info-seccion span');
+    
+    // ==========================================
+    // 1. ANIMACIÓN DE MECANOGRAFÍADO (TU BIOGRAFÍA)
+    // ==========================================
+    const textoBiografia = document.querySelector('.info-seccion p');
 
-    // 2. Control de seguridad: Si no lo encuentra, te avisará en la consola (F12)
     if (textoBiografia) {
-        // 3. Guardamos el texto original y limpiamos el parrafo para empezar desde de cero
         const textoOriginal = textoBiografia.textContent;
         textoBiografia.textContent = '';
         let indice = 0;
 
-        // 4. Funcion que escribe letra por letra
         function escribirTexto() {
             if (indice < textoOriginal.length){
                 textoBiografia.textContent += textoOriginal.charAt(indice);
                 indice++;
-                // Ajustamos el numero en milisegundos para cambiar la velocidad de escritura
-                setTimeout(escribirTexto, 30); // 30ms por letra
+                setTimeout(escribirTexto, 30);
             }
         }
-        // 5. Arranca la animacion despues de medio segundo de haber cargado la pagina
         setTimeout(escribirTexto, 500);
-
-    } else {
-        // Si hay un error de nombres en tu HTML, esto saldrá en ROJO al presionar F12
-        console.error("ERROR CRÍTICO: No se encontró el párrafo. Revisa tu HTML.");
     }
+
+    // ==========================================
+    // 2. MOTOR DEL SISTEMA DE LOGROS
+    // ==========================================
+    const contenedorLogros = document.getElementById('contenedor-logros');
+
+    function desbloquearLogro(titulo, descripcion) {
+        // Creamos la estructura HTML del logro dinámicamente
+        const logro = document.createElement('div');
+        logro.className = 'notificacion-logro';
+        
+        logro.innerHTML = `
+            <div class="logro-encabezado">🏆 LOGRO DESBLOQUEADO</div>
+            <div class="logro-titulo">${titulo}</div>
+            <div class="logro-desc">${descripcion}</div>
+        `;
+        
+        contenedorLogros.appendChild(logro);
+        
+        // Pequeña pausa para que el navegador procese la animación CSS de entrada
+        setTimeout(() => {
+            logro.classList.add('mostrar');
+        }, 100);
+        
+        // Se oculta automáticamente después de 4.5 segundos
+        setTimeout(() => {
+            logro.classList.remove('mostrar');
+            // Lo eliminamos por completo del HTML cuando termine de esconderse
+            setTimeout(() => logro.remove(), 500);
+        }, 4500);
+    }
+
+    // ==========================================
+    // 3. DISPARADORES DE LOGROS (TRIGGERS)
+    // ==========================================
+
+    // LOGRO 1: Por tener la curiosidad de quedarse 8 segundos leyendo la interfaz
+    setTimeout(() => {
+        if (!localStorage.getItem('logro_tiempo')) {
+            localStorage.setItem('logro_tiempo', 'true');
+            desbloquearLogro(
+                "Curioso del Código", 
+                "Has permanecido analizando los registros de datos de este portafolio por más de 8 segundos."
+            );
+        }
+    }, 8000);
+
+    // LOGRO 2: Por interactuar y hacer clic en cualquiera de tus botones de redes sociales
+    const botonesRedes = document.querySelectorAll('.boton-red');
+    botonesRedes.forEach(boton => {
+        boton.addEventListener('click', () => {
+            if (!localStorage.getItem('logro_redes')) {
+                localStorage.setItem('logro_redes', 'true');
+                desbloquearLogro(
+                    "Rastreador de Enlaces", 
+                    "Sincronizaste con éxito las coordenadas de contacto externas del desarrollador."
+                );
+            }
+        });
+    });
+
 });
