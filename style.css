@@ -126,4 +126,58 @@ p{
     inset 0 0 15px rgba(212, 175, 55, 0.1);
     transform: translateY(-2px);
 }
+/* Contenedor invisble en la esquina superior derecha */
+#contenedor-logros{
+    postion: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+/* Diseño de la tarjeta de logro*/
+.notificacion-logro{
+    background: rgba(12, 12, 18, 0.95);
+    border: 1px solid #d4af37;/* borde dorado caracteristico*/
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25)
+    inset 0 0 15px rgba(212, 175, 55, 0.05);
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px; 
+    min-width: 290px;
+    max-width: 360px;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    /*Estado inical: invisible y fuera de la pantalla a la derecha*/
+    transform: translateX(130%);
+    opacity: 0;
+    transition: transform 0,5s cubic-bezier(0.175, 0.885, 0.32, 1.25), opacity 0.4s ease;
+}
+/*Clase que javascrit activara para meter el logro a la pamtalla*/
+.notificacion-logro.mostrar{
+    transform: translateX(0);
+    opacity: 1;
+}
+/* textosinternos del logro*/
+.logro-encabezado{
+    color: #d4af37;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 2px;;
+}
+.logro-titulo{
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 2px;
+}
+.logro-desc{
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    line-height: 1.3;
+}
 }
