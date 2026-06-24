@@ -96,4 +96,34 @@ p{
         justify-content: center;
         flex-wrap: wrap;
     }
+/* contenedorr para los botones de las reddes asi bien pasado de verdura */
+.redes-contenedor{
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+/*boton estilo menu del honkai star rail ojala y no me demanden mihoyo*/
+.boton-red{
+    text-decoration: none;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.02);
+}
+/*Efecto de seleccion dorada al pasar el mouse*/
+.boton-red:hover{
+    color: #d4af37;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.08);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2),
+    inset 0 0 15px rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+}
 }
