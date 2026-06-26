@@ -180,4 +180,55 @@ p{
     color: #aaaaaa;
     line-height: 1.3;
 }
+/* --- Sección de estadisticas ---*/
+.stats-seccion{
+    background: rgba(12, 12, 18, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    border-radius: 6px;
+    max-width: 450px;
+    margin: 40px auto;/*lo centra y separa de lo de arriba*/
+    font-family: sans-serif;
+}
+.stats-titulo{
+    color: #d4af27;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border-left: 4px solid #d4af37;
+    text-transform: uppercase;
+}
+.stat-item{
+    margin-bottom: 18px;
+}
+.stat-info{
+    display: flex;
+    justify-content: space-between;
+    color:#ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+.stat-porcentaje{
+    color:#d4af37;
+}
+/* riel gris oscuro por donde correr la barra*/
+.barra-fondo{
+    background: rgba(255, 255, 255, 0.08);
+    height: 12px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03)
+}
+/* la barra de energia real*/
+.barra-progreso{
+    background: linear-gradient(90deg, #b8860b, #d4af37);
+    height: 100%;
+    width: 0%;/*empieza vacia en cero*/
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.04);
+    /* esta linea es la que le da magia hara que tarde 1.5 segundos en llenarse suavemente*/
+    transition: width 1.5s cubic-beizier(0.1, 0.8, 0.2, 1);
+}
 }
